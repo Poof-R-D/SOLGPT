@@ -612,41 +612,4 @@ def fetch_pumpfun_tokens(limit=50):
         if resp.status_code == 200:
             return resp.json().get("data", {}).get("feed", [])
         return []
-    except Exception:
-        return []
 
-@app.get("/pumpfun")
-def get_latest_pumpfun_tokens():
-    """List latest Pump.fun launches (basic info)"""
-    tokens = fetch_pumpfun_tokens()
-    return [
-        {
-            "name": t.get("name"),
-            "symbol": t.get("symbol"),
-            "mint": t.get("metadata", {}).get("mint"),
-            "price": t.get("stats", {}).get("price"),
-            "market_cap": t.get("stats", {}).get("marketCap"),
-            "volume_24h": t.get("stats", {}).get("volume24h")
-        }
-        for t in tokens if t.get("metadata", {}).get("mint")
-    ]
-
-@app.get("/pumpfun/{mint}")
-def get_pumpfun_token_by_mint(mint: str):
-    """Check if a given mint matches a Pump.fun token"""
-    tokens = fetch_pumpfun_tokens(200)  # search through more for better coverage
-    for t in tokens:
-        if t.get("metadata", {}).get("mint") == mint:
-            return {
-                "name": t.get("name"),
-                "symbol": t.get("symbol"),
-                "mint": mint,
-                "price": t.get("stats", {}).get("price"),
-                "market_cap": t.get("stats", {}).get("marketCap"),
-                "volume_24h": t.get("stats", {}).get("volume24h")
-            }
-    raise HTTPException(status_code=404, detail="Mint not found in Pump.fun listings")
-
-@app.get("/")
-def root():
-    return {"message": "SolanaGPT online — try /balances/{address} or /transaction/{signature}"}
