@@ -1,7 +1,7 @@
 # SOLGPT
 GPT speaks Solana now, leveraging the power of OpenAI models with Solana RPCs
 
-# SolanaGPT API
+# API
 
 SolanaGPT is a FastAPI backend that:
 - Fetches token prices on Solana
