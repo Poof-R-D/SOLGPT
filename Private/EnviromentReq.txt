@@ -1,0 +1,1 @@
+enviroment credidentials needed: Openai account and railway integration call points.
