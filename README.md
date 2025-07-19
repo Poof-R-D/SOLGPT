@@ -20,3 +20,5 @@ HELIUS_API_KEY=your_key_here
 pip install -r requirements.txt
 uvicorn main:app --reload
 ```
+
+//README File outdated *Update*
