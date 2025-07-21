@@ -21,7 +21,7 @@ app.add_middleware(
 )
 
 # API keys and endpoints configuration
-HELIUS_RPC_API_KEY = os.getenv("HELIUS_RPC_API_KEY", "a8b4eafc-da15-47d1-89a4-f3492ae7406a")
+HELIUS_RPC_API_KEY = os.getenv("HELIUS_RPC_API_KEY", "cfa5bbd3-4880-4efe-87ac-319f7093cf7a")
 HELIUS_METADATA_API_KEY = os.getenv("HELIUS_METADATA_API_KEY", "cfa5bbd3-4880-4efe-87ac-319f7093cf7a")
 ALCHEMY_API_KEY = os.getenv("ALCHEMY_API_KEY", "YOUR_API_KEY")
 SYNDICA_API_KEY = os.getenv("SYNDICA_API_KEY", "YOUR_API_KEY")
