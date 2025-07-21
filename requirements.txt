@@ -1,0 +1,8 @@
+fastapi>=0.95.2
+uvicorn>=0.22.0
+requests>=2.28.2
+python-dotenv>=1.0.0
+pydantic>=1.10.7,<2
+base58>=2.1.1
+solana>=0.30.0
+solders>=0.26.0
