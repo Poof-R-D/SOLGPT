@@ -9,8 +9,8 @@ import os
 app = FastAPI(
     title="SolanaGPT",
     description="Poof Labs Solana degen trading assistant",
-    version="1.0"
-    # Removed explicit servers list to avoid hardcoding deployment URL
+    version="1.0",
+    servers=[{"url": "https://solgpt-production-e0e4.up.railway.app"}]
 )
 
 app.add_middleware(
