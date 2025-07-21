@@ -1,3 +1,0 @@
-enviroment credidentials needed: Openai account and railway integration call points.
-
-API KEY FORMAT   REFER TO ./SRC/ENV
